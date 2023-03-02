@@ -1,0 +1,21 @@
+<p>{{homeTitle}}</p>
+<ng-content></ng-content>
+
+<!-- property binding -->
+<input [value]="myString" />
+<input [required]="myBoolean" />
+<button (click)="alertMe('hello peeps')"> Click me</button>
+<br> <br> <hr>
+
+<label> Name: </label>
+<input [(ngModel)]="ninja.name" />
+
+<label> Belt: </label>
+<input [(ngModel)]="ninja.belt" />
+
+<p> {{ninja.name}}</p>
+<p> {{ninja.belt}}</p>
+<!-- 
+<input value="{{myString}}" />
+<input required="{{myBoolean}}" />
+-->
