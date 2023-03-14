@@ -4,12 +4,17 @@
 
 <nav>
   <ul>
-    <li> link </li>
-    <li> link </li>
+    <li> <a routerLink="/"> Home</a> </li>
+    <li> <a routerLink="/directory"> Directory</a></li>
   </ul>
 </nav>
 
 
 <section id="main">
-  <app-home> WIll this work?</app-home>
+
+  <!-- custom property binding to pass data from root to home component
+  yell is a custom event -->
+  <!-- define routes here-->
+    <router-outlet></router-outlet>
+  <!--<app-home [ninja2]="ninja2" (onYell)="yell($event)"> WIll this work?</app-home>!-->
 </section>

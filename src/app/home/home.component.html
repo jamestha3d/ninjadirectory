@@ -15,6 +15,12 @@
 
 <p> {{ninja.name}}</p>
 <p> {{ninja.belt}}</p>
+
+
+
+<!-- this is using output 2 way binding-->
+<button (click)="fireYellEvent($event)">Hit me</button>
+<button (click)="logIt()"> Log me</button>
 <!-- 
 <input value="{{myString}}" />
 <input required="{{myBoolean}}" />

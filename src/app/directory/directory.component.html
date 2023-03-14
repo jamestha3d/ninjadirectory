@@ -1,0 +1,44 @@
+<p [ngClass]="classes">
+    directory works!</p>
+<p> {{ninja}}</p>
+
+<!-- *ngIf directive is a structural directive that works like an if condition-->
+<p *ngIf="false"> Only show if test is true</p>
+
+<form Id="filter">
+    <label> Filter ninjas by name: </label>
+    <input type="text" id="term" [(ngModel)]="term" [ngModelOptions]="{standalone: true}"/>
+</form>
+
+
+<!-- *ngFor directive is used like a for loop. -->
+<ul id="ninja-listing">
+    <li *ngFor="let ninja of ninjas | filter:term">
+        <div class=""single-ninja>
+            <!--Belt color-->
+            <span [ngStyle]="{background: ninja.belt}"> {{ninja.belt}} belt </span>
+            <!--Ninja Name-->
+            <!-- pipe uppercase changes text to uppercase-->
+            <h3> {{ninja.name| uppercase}} </h3>
+            <!--| slice:1 - slice 1st letter from the output
+                slice:1:3 - slice from 1st to 3rd
+                pipes can be chained -->
+                
+            <div  [attr.data-name]="ninja.name">delete</div>
+        </div>
+    </li>
+</ul>
+
+<form id="add-ninja">
+    <input type="text" [(ngModel)]="name"/>
+    <input type="text" [(ngModel)]="belt"/>
+    <button (click)="fbPostData(name, belt)"> Add Ninja</button>
+</form>
+<button (click)="logIt()"> Log Me</button>
+
+
+<style>
+    .blue{color: blue;}
+    .red{color: red}
+    .underline{text-decoration: underline;}
+</style> 

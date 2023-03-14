@@ -7,8 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="/styles.css" rel="stylesheet" type="text/css"/>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+
 </head>
 <body>
   <app-root></app-root>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js';
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDI2uHeur6q2Eis42rqirfdZ405A38LsDc",
+      authDomain: "nn-angular-d4653.firebaseapp.com",
+      databaseURL: "https://nn-angular-d4653-default-rtdb.firebaseio.com",
+      projectId: "nn-angular-d4653",
+      storageBucket: "nn-angular-d4653.appspot.com",
+      messagingSenderId: "733414499187",
+      appId: "1:733414499187:web:dcab4ebffb6cf3a82e1b06",
+      measurementId: "G-25G0FEDB2M"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
